@@ -10,32 +10,11 @@ output:
 ```r
 act <- read.csv("activity.csv")
 ```
-
-```
-## Warning in file(file, "rt"): cannot open file 'activity.csv': No such file
-## or directory
-```
-
-```
-## Error in file(file, "rt"): cannot open the connection
-```
 ## What is mean total number of steps taken per day?
 ### Gather and process data
 
 ```r
 act <- read.csv("activity.csv")
-```
-
-```
-## Warning in file(file, "rt"): cannot open file 'activity.csv': No such file
-## or directory
-```
-
-```
-## Error in file(file, "rt"): cannot open the connection
-```
-
-```r
 act$date <-as.factor(act$date)
 act2 <- split(act, act$date)
 ```
@@ -65,18 +44,6 @@ rug(sum_per_day)
 
 ```r
 act <- read.csv("activity.csv")
-```
-
-```
-## Warning in file(file, "rt"): cannot open file 'activity.csv': No such file
-## or directory
-```
-
-```
-## Error in file(file, "rt"): cannot open the connection
-```
-
-```r
 act$interval <- as.factor(act$interval)
 act2 <- split(act, act$interval)
 ```
@@ -102,15 +69,6 @@ plot( x = unique(as.numeric(act$interval)), y = mean_per_int, type = "l", ylab =
 
 ```r
 act <- read.csv("activity.csv")
-```
-
-```
-## Warning in file(file, "rt"): cannot open file 'activity.csv': No such file
-## or directory
-```
-
-```
-## Error in file(file, "rt"): cannot open the connection
 ```
 ## Fill data into na values
 
@@ -161,18 +119,6 @@ text(paste("The median number of steps per day is", as.character(median)))
 
 ```r
 act <- read.csv("activity.csv", stringsAsFactors = FALSE)
-```
-
-```
-## Warning in file(file, "rt"): cannot open file 'activity.csv': No such file
-## or directory
-```
-
-```
-## Error in file(file, "rt"): cannot open the connection
-```
-
-```r
 act.na <- (act$steps)[is.na(act$steps)]
 missing_values <- length(act.na)
 act.na <- act
